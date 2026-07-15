@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Normal
   m_EditorClassIdentifier: 
   title: Normal
+  image: {fileID: 21300000, guid: b9a0e9ddea9c3a14b8f98d2065096ec7, type: 3}
