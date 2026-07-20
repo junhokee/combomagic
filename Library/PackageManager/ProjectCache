@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639189689046309625
-    m_Hash: 2684818500
+      ticks: 639200510174820343
+    m_Hash: 3981401259
   m_LockFileStatus:
     m_FilePath: C:/Users/junho/ComboMagic/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 639189689046364763
-    m_Hash: 2023228530
+      ticks: 639200510174845443
+    m_Hash: 3690301276
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -22,6 +22,62 @@ m_LocalPackages:
 m_ProjectPath: C:/Users/junho/ComboMagic/Packages
 m_EditorVersion: 2022.3.33f1 (b2c853adf198)
 m_ResolvedPackages:
+- packageId: com.mackysoft.serializereference-extensions@https://github.com/mackysoft/Unity-SerializeReferenceExtensions.git?path=Assets/MackySoft/MackySoft.SerializeReferenceExtensions
+  testable: 0
+  isDirectDependency: 1
+  version: 1.7.0
+  source: 5
+  resolvedPath: C:\Users\junho\ComboMagic\Library\PackageCache\com.mackysoft.serializereference-extensions@5fadcb6564
+  assetPath: Packages/com.mackysoft.serializereference-extensions
+  name: com.mackysoft.serializereference-extensions
+  displayName: SerializeReference Extensions
+  author:
+    name: MackySoft
+    email: 
+    url: https://github.com/mackysoft
+  category: 
+  type: 
+  description: Provide popup to specify the type of the field serialized by the [SerializeReference]
+    attribute in the inspector.
+  status: 0
+  errors: []
+  versions:
+    all: []
+    compatible: []
+    recommended: 
+    deprecated: []
+  dependencies: []
+  resolvedDependencies: []
+  keywords:
+  - SerializeReference
+  - Editor
+  registry:
+    id: main
+    name: 
+    url: https://packages.unity.com
+    scopes: []
+    isDefault: 1
+    capabilities: 7
+    configSource: 0
+  hideInEditor: 1
+  isAssetStorePackage: 0
+  datePublishedTicks: 0
+  documentationUrl: https://github.com/mackysoft/Unity-SerializeReferenceExtensions
+  hasRepository: 0
+  repository:
+    type: 
+    url: 
+    revision: 
+    path: 
+  unityLifecycle:
+    version: 
+    nextVersion: 
+    recommendedVersion: 
+    isDeprecated: 0
+    deprecationMessage: 
+  isDeprecated: 0
+  deprecationMessage: 
+  fingerprint: 
 - packageId: com.unity.collab-proxy@2.12.4
   testable: 0
   isDirectDependency: 1
@@ -133,6 +189,7 @@ m_ResolvedPackages:
     - 2.11.3
     - 2.11.4
     - 2.12.4
+    - 2.13.3
     compatible:
     - 2.3.1
     - 2.4.3
@@ -5263,6 +5320,7 @@ m_ResolvedPackages:
     - 2.6.5
     - 2.6.6
     - 2.6.7
+    - 2.6.8
     compatible:
     - 1.2.4
     - 1.3.1
@@ -5302,7 +5360,8 @@ m_ResolvedPackages:
     - 2.6.5
     - 2.6.6
     - 2.6.7
-    recommended: 2.6.7
+    - 2.6.8
+    recommended: 2.6.8
     deprecated: []
   dependencies:
   - name: com.unity.burst

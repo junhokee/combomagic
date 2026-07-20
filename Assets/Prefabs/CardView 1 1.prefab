@@ -691,6 +691,7 @@ MonoBehaviour:
   - {fileID: 0}
   spacing: 5
   traitPrefab: {fileID: 9155078206402510159, guid: f13ef9d6262812a4f882284d199b0979, type: 3}
+  cardInput: {fileID: 7660238703754259277}
 --- !u!210 &1001411977631409952
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -748,4 +749,13 @@ MonoBehaviour:
   EndDragEvent:
     m_PersistentCalls:
       m_Calls: []
+  PlayedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  DroppedEvent:
+    m_PersistentCalls:
+      m_Calls: []
   baseSortingOrder: 0
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 8

@@ -17,7 +17,16 @@ public class CardView : MonoBehaviour
     [SerializeField] private float spacing = 10f;
     [SerializeField] private GameObject traitPrefab;
 
+    [SerializeField] private CardInput cardInput;
+
     public Card Card {get; private set;}
+    
+
+    public void Awake(){
+        cardInput.DroppedEvent.AddListener(OnDropped);
+
+    }
+
     public void Initialize(Card card)
         {
             Card = card;
@@ -55,6 +64,17 @@ public class CardView : MonoBehaviour
                 float t = count > 1 ? (float)i / (count - 1) - 0.5f : 0f;
                 Vector3 pos = new Vector3(t * spacing + count*0.2f, 0, 0);
                 traitVisuals[i].transform.localPosition = pos; 
+            }
+        }
+
+        void OnDropped(CardInput input, ICardTarget target){
+            if (target != null && target.IsValidTarget(Card))
+            {
+                Debug.Log("invoked");
+                input.PlayedEvent.Invoke(input);
+            } else{
+                Debug.Log("end drag");
+                input.EndDragEvent.Invoke(input);
             }
         }
     

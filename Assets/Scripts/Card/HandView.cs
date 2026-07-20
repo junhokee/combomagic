@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -92,6 +93,7 @@ public class Hand : MonoBehaviour
             card.EndDragEvent.AddListener(OnCardEndDrag);
             card.PointerEnterEvent.AddListener(OnCardEnter);
             card.PointerExitEvent.AddListener(OnCardExit);
+            card.PlayedEvent.AddListener(OnCardPlayed);
 
                 
         
@@ -112,6 +114,7 @@ public class Hand : MonoBehaviour
         card.EndDragEvent.AddListener(OnCardEndDrag);
         card.PointerEnterEvent.AddListener(OnCardEnter);
         card.PointerExitEvent.AddListener(OnCardExit);
+        card.PlayedEvent.AddListener(OnCardPlayed);
 
 
         ArrangeHand();
@@ -122,6 +125,10 @@ public class Hand : MonoBehaviour
     
     public void RemoveCard(CardInput card)
     {
+        if(selectedCard == card)
+        {
+            selectedCard = null;
+        }
         Transform slot = card.transform.parent;
         cardInputs.Remove(card);
         Destroy(slot.gameObject);
@@ -138,7 +145,7 @@ public class Hand : MonoBehaviour
         {
             float t = count > 1 ? (float)i / (count - 1) - 0.5f : 0f;
 
-            Vector3 pos = new Vector3(t * spacing *(count+2)/count, -Mathf.Abs(t) * arcHeight, 0);
+            Vector3 pos = new Vector3(t * spacing * Mathf.Sqrt(count), -Mathf.Abs(t) * arcHeight, 0);
             float angle = -t * maxAngle;
 
             Transform slot = cardInputs[i].transform.parent;
@@ -170,6 +177,11 @@ public class Hand : MonoBehaviour
         selectedCard = null;
         SnapBackToSlot(card);
         card.SetSortingOrder(card.GetBaseSortingOrder());
+    }
+
+    void OnCardPlayed(CardInput card){
+        Debug.Log("remove");
+        RemoveCard(card);
     }
 
     void SnapBackToSlot(CardInput card)

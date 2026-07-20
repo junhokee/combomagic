@@ -8,6 +8,8 @@ public class Card
     public string Title => data.title;
     public string Description => data.description;
     public Sprite image => data.image;
+    public CardType cardType => data.cardtype;
+    public bool isAttack => data.isAttack;
     public List<Traits> traits;
     
 
@@ -20,9 +22,13 @@ public class Card
             traits.Add(t);
         }
     }
-    public void Play()
+    public void Play(ICardTarget target)
     {
-        
+        foreach (CardEffect effect in data.effects)
+        {
+            GameAction action = effect.CreateAction(target, this);
+            ActionQueue.Instance.Enqueue(action);
+        }
     }
 
 }

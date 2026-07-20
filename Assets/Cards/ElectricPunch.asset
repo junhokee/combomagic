@@ -18,3 +18,12 @@ MonoBehaviour:
   baseTraits:
   - {fileID: 11400000, guid: b861afe08c95a284a8d10322aa75965c, type: 2}
   - {fileID: 11400000, guid: 955da6e49a9ae514c810d01de6dab895, type: 2}
+  isAttack: 1
+  cardtype: 0
+  effects:
+  - rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

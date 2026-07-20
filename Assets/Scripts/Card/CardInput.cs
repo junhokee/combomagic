@@ -13,6 +13,8 @@ public class CardInput : MonoBehaviour
     public UnityEvent<CardInput> PointerExitEvent;
     public UnityEvent<CardInput> BeginDragEvent;
     public UnityEvent<CardInput> EndDragEvent;
+    public UnityEvent<CardInput> PlayedEvent;
+    public UnityEvent<CardInput, ICardTarget> DroppedEvent;
     [Header("Card Dragging Stuff")]
 
     public static bool isAnyCardDragging = false;
@@ -26,6 +28,8 @@ public class CardInput : MonoBehaviour
     private Transform mySlot;
     private float pointerDownTime;
     public int baseSortingOrder;
+
+    public LayerMask targetLayer;
     
     void Awake() {
         mainCamera = Camera.main;
@@ -53,6 +57,7 @@ public class CardInput : MonoBehaviour
         Vector3 screenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, distanceFromCamera);
         transform.position = mainCamera.ScreenToWorldPoint(screenPoint);
         sortingGroup.sortingOrder = 100;
+        ICardTarget target = FindTargetUnderCard();
     }
 
     void OnMouseUp()
@@ -64,10 +69,15 @@ public class CardInput : MonoBehaviour
         {
             // toggle selection logic here later
         }
-        
         sortingGroup.sortingOrder = 0;
-        EndDragEvent.Invoke(this);
+        ICardTarget target = FindTargetUnderCard();
+        DroppedEvent.Invoke(this, target);
+
     }
+
+
+
+
     void OnMouseEnter()
     {
         if (isAnyCardDragging) return;
@@ -108,6 +118,19 @@ public class CardInput : MonoBehaviour
     public void SetSortingOrder(int order)
     {
         sortingGroup.sortingOrder = order;
+    }
+
+
+    ICardTarget FindTargetUnderCard(){
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out RaycastHit hit, 100f, targetLayer))
+        {
+            Debug.Log("i see it");
+            return hit.collider.GetComponentInParent<ICardTarget>();
+        }
+
+        return null;
     }
     
 }
