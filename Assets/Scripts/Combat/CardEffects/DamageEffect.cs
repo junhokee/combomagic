@@ -9,6 +9,7 @@ public class DamageEffect : CardEffect
 
     public override GameAction CreateAction(ICardTarget target, Card sourceCard)
     {
+        Debug.Log("is this working?");
         return new DamageAction(target, amount);
     }
 }

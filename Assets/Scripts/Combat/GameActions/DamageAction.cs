@@ -16,7 +16,7 @@ public class DamageAction : GameAction
     public override IEnumerator Execute()
     {
         Debug.Log("Damage done");
-        //target.receiveDamage
+        target.ReceiveDamage(amount);
         yield return new WaitForSeconds(0.3f);
     }
 }

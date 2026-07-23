@@ -21,9 +21,17 @@ MonoBehaviour:
   isAttack: 1
   cardtype: 0
   effects:
-  - rid: -2
+  - rid: 3936728203730616320
+  - rid: 3936728239089123329
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 3936728203730616320
+      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        amount: 6
+    - rid: 3936728239089123329
+      type: {class: AddTraitEffect, ns: , asm: Assembly-CSharp}
+      data:
+        trait: {fileID: 11400000, guid: b861afe08c95a284a8d10322aa75965c, type: 2}
+        amount: 1

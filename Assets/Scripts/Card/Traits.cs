@@ -8,4 +8,5 @@ public class Traits : ScriptableObject
 {
     public string title;
     public Sprite image;
+    
 }

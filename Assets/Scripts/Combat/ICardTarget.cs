@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public interface ICardTarget{
-    void ReceiveCard(Card card);
+    void ReceiveDamage(int amount);
     void DragCard();
     void HoverCard();
     bool IsValidTarget(Card card);

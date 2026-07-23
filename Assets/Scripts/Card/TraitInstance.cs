@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TraitInstance
 {
-    public Traits data {get; private set;}
+    public  Traits data {get; private set;}
+    
 
     public int stacks;
     public Sprite sprite;
@@ -13,6 +14,13 @@ public class TraitInstance
     {
         this.data = data;
         this.stacks = stacks;
-        this.sprite = data.image;
+        sprite = data.image;
+            Debug.Log($"TraitInstance created: data={data}, data.image={data.image}, sprite={sprite}");
+
+    }
+
+    public void Activate(int stacks)
+    {
+        
     }
 }

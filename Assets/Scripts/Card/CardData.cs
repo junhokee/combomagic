@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using SerializeReferenceEditor;
 
 [CreateAssetMenu(menuName = "Data/Card")]
 public class CardData : ScriptableObject
@@ -12,8 +13,7 @@ public class CardData : ScriptableObject
     public List<Traits> baseTraits;
     public bool isAttack;
     public CardType cardtype;
-    [SerializeReference] 
-    public List<CardEffect> effects;
+    [SerializeReference, SR] public List<CardEffect> effects;
     
 
 }

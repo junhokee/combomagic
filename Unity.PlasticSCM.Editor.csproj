@@ -89,9 +89,9 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\Views\Diff\GetClientDiffInfos.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\CodeEditor\TextEditorComponent.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\Views\Diff\DiffTreeView.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\Views\Locks\LocksViewMenu.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\CodeEditor\TextViewPosition.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\UI\UnityThreadWaiter.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\Views\Locks\LocksViewMenu.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\CodeEditor\Rendering\TextParagraphProperties.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\Settings\PendingChangesOptionsFoldout.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\UI\PlasticDialog.cs" />

@@ -26,6 +26,7 @@ public class Card
     {
         foreach (CardEffect effect in data.effects)
         {
+            Debug.Log("aufshaf");
             GameAction action = effect.CreateAction(target, this);
             ActionQueue.Instance.Enqueue(action);
         }

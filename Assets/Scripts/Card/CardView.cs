@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.XR;
 
 public class CardView : MonoBehaviour
 {
@@ -70,6 +71,7 @@ public class CardView : MonoBehaviour
         void OnDropped(CardInput input, ICardTarget target){
             if (target != null && target.IsValidTarget(Card))
             {
+                Card.Play(target);
                 Debug.Log("invoked");
                 input.PlayedEvent.Invoke(input);
             } else{

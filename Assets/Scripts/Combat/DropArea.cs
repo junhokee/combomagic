@@ -8,9 +8,9 @@ public class DropArea : MonoBehaviour, ICardTarget
 
     public bool IsValidTarget(Card card){
         if(card.isAttack){
-            return true;
-        } else{
             return false;
+        } else{
+            return true;
         }
     }
 
@@ -23,7 +23,7 @@ public class DropArea : MonoBehaviour, ICardTarget
         sr.color = Color.red;
     }
 
-    public void ReceiveCard(Card card)
+    public void ReceiveDamage(int amount)
     {
 
     }

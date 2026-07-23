@@ -30,6 +30,7 @@ public class CardInput : MonoBehaviour
     public int baseSortingOrder;
 
     public LayerMask targetLayer;
+    public LayerMask dropLayer;
     
     void Awake() {
         mainCamera = Camera.main;
@@ -121,16 +122,18 @@ public class CardInput : MonoBehaviour
     }
 
 
-    ICardTarget FindTargetUnderCard(){
+    ICardTarget FindTargetUnderCard()
+    {
+        // Check targets FIRST — enemies/player take priority over generic drop zones
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out RaycastHit hit, 100f, targetLayer))
-        {
-            Debug.Log("i see it");
-            return hit.collider.GetComponentInParent<ICardTarget>();
-        }
+        if (Physics.Raycast(ray, out RaycastHit targetHit, 100f, targetLayer))
+            return targetHit.collider.GetComponentInParent<ICardTarget>();
+
+        if (Physics.Raycast(ray, out RaycastHit zoneHit, 100f, dropLayer))
+            return zoneHit.collider.GetComponentInParent<ICardTarget>();
 
         return null;
     }
-    
+        
 }
