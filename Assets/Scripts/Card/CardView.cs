@@ -19,14 +19,29 @@ public class CardView : MonoBehaviour
     [SerializeField] private GameObject traitPrefab;
 
     [SerializeField] private CardInput cardInput;
+    private SpriteRenderer[] allRenderers;
+    private Color[] originalColors;
 
     public Card Card {get; private set;}
+    public bool playable;
     
 
     public void Awake(){
         cardInput.DroppedEvent.AddListener(OnDropped);
+        allRenderers = GetComponentsInChildren<SpriteRenderer>();
+        originalColors = new Color[allRenderers.Length];
 
+        for (int i = 0; i < allRenderers.Length; i++)
+            originalColors[i] = allRenderers[i].color;
+        ComboManager.Instance.ComboStateChangedEvent.AddListener(RefreshPlayability);
     }
+
+    void OnDestroy()
+    {
+        ComboManager.Instance.ComboStateChangedEvent.RemoveListener(RefreshPlayability); // avoid leaks
+    }
+
+
 
     public void Initialize(Card card)
         {
@@ -40,7 +55,6 @@ public class CardView : MonoBehaviour
                 TraitInstance traitInstance = new TraitInstance(t);
                 AddTrait(traitInstance);
                 
-
             }
         }
 
@@ -69,7 +83,7 @@ public class CardView : MonoBehaviour
         }
 
         void OnDropped(CardInput input, ICardTarget target){
-            if (target != null && target.IsValidTarget(Card))
+            if (target != null && target.IsValidTarget(Card) && ComboManager.Instance.CanPlay(Card))
             {
                 Card.Play(target);
                 Debug.Log("invoked");
@@ -78,6 +92,33 @@ public class CardView : MonoBehaviour
                 Debug.Log("end drag");
                 input.EndDragEvent.Invoke(input);
             }
+        }
+
+        public void ShowDisabled(bool darkened)
+        {
+            for (int i = 0; i < allRenderers.Length; i++)
+            {
+                if (darkened)
+                {
+                    Color c = originalColors[i];
+                    c.r *= 0.5f;
+                    c.g *= 0.5f;
+                    c.b *= 0.5f;
+                    // Leave alpha unchanged
+                    allRenderers[i].color = c;
+                }
+                else
+                {
+                    allRenderers[i].color = originalColors[i];
+                }
+            }
+        }
+
+        public void RefreshPlayability()
+        {
+            bool canPlay = ComboManager.Instance.CanPlay(Card);
+            playable = canPlay;
+            ShowDisabled(!canPlay);
         }
     
     

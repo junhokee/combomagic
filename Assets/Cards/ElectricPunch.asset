@@ -23,6 +23,7 @@ MonoBehaviour:
   effects:
   - rid: 3936728203730616320
   - rid: 3936728239089123329
+  - rid: 3936728283742470144
   references:
     version: 2
     RefIds:
@@ -34,4 +35,9 @@ MonoBehaviour:
       type: {class: AddTraitEffect, ns: , asm: Assembly-CSharp}
       data:
         trait: {fileID: 11400000, guid: b861afe08c95a284a8d10322aa75965c, type: 2}
+        amount: 1
+    - rid: 3936728283742470144
+      type: {class: AddTraitEffect, ns: , asm: Assembly-CSharp}
+      data:
+        trait: {fileID: 11400000, guid: 955da6e49a9ae514c810d01de6dab895, type: 2}
         amount: 1

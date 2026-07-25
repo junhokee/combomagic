@@ -12,7 +12,6 @@ public class AddTraitAction : GameAction
         this.trait = trait;
         this.amount = amount;
     }
-
     public override IEnumerator Execute()
     {
         TraitManager.Instance.AddTrait(trait, amount);

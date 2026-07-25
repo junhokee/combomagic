@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TraitUI : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class TraitUI : MonoBehaviour
             rowObj.GetComponent<TraitRowUI>().Setup(trait);
             spawnedRows.Add(rowObj);
         }
+        Canvas.ForceUpdateCanvases(); // forces ALL canvases to update immediately
+        LayoutRebuilder.ForceRebuildLayoutImmediate(container.GetComponent<RectTransform>());
     }
 
 }

@@ -14,6 +14,7 @@ public class Hand : MonoBehaviour
     [Header("cards")]
     //temp
     [SerializeField] private CardData ElectricPunch;
+    [SerializeField] private CardData FirePunch;
     public CardInput selectedCard;
     private bool isCrossing = false;
     private List<CardInput> cardInputs = new List<CardInput>();
@@ -25,9 +26,17 @@ public class Hand : MonoBehaviour
 //temporary
     void Start()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Card electricPunch = new Card(ElectricPunch);
+                CardView view = Instantiate(cardPrefab);
+                view.Initialize(electricPunch);
+                CardInput input = view.gameObject.GetComponent<CardInput>();
+                AddCard(input);
+            }
+             for (int i = 0; i < 5; i++)
+            {
+                Card electricPunch = new Card(FirePunch);
                 CardView view = Instantiate(cardPrefab);
                 view.Initialize(electricPunch);
                 CardInput input = view.gameObject.GetComponent<CardInput>();

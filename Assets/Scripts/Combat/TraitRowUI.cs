@@ -11,5 +11,6 @@ public class TraitRowUI : MonoBehaviour
     {
         icon.sprite = instance.sprite;
         label.text = $"{instance.stacks}";
+        label.ForceMeshUpdate();
     }
 }

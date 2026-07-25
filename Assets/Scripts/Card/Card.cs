@@ -30,6 +30,10 @@ public class Card
             GameAction action = effect.CreateAction(target, this);
             ActionQueue.Instance.Enqueue(action);
         }
+        
+        ComboManager.Instance.RegisterCardPlayed(this);
     }
+
+
 
 }
