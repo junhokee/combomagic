@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9745b588596f0d4984783f28e7035b3, type: 3}
   m_Name: Fire
   m_EditorClassIdentifier: 
-  title: 
-  image: {fileID: 0}
+  title: Fire
+  image: {fileID: 21300000, guid: c12265e58eca15c449afe8d2510ceccf, type: 3}

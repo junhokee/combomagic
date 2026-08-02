@@ -130,6 +130,16 @@ public class Hand : MonoBehaviour
         return slotObj.transform;
     }
 
+    public Transform AddCard(Card card)
+    {
+        CardView cardObj = Instantiate(cardPrefab);
+        CardInput cardInput = cardObj.GetComponent<CardInput>();
+
+        cardObj.Initialize(card); // sets up visuals, traits, etc — your existing Initialize method
+
+        return AddCard(cardInput);
+    }
+
 
     
     public void RemoveCard(CardInput card)

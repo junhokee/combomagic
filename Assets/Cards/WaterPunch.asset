@@ -12,13 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d562a2edccd55b469b6c20542120724, type: 3}
   m_Name: WaterPunch
   m_EditorClassIdentifier: 
-  title: 
-  description: 
+  title: Water Punch
+  description: Deals 5 damage, heal 5 damage
   image: {fileID: 0}
-  baseTraits: []
-  isAttack: 0
+  baseTraits:
+  - {fileID: 11400000, guid: badeb64aec957e4448bc2f7e142899b4, type: 2}
+  - {fileID: 11400000, guid: 955da6e49a9ae514c810d01de6dab895, type: 2}
+  isAttack: 1
   cardtype: 0
-  effects: []
+  effects:
+  - rid: 3936728283742470147
+  - rid: 3936728283742470148
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 3936728283742470147
+      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        amount: 5
+    - rid: 3936728283742470148
+      type: {class: HealEffect, ns: , asm: Assembly-CSharp}
+      data:
+        amount: 5

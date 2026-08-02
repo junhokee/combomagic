@@ -750,11 +750,11 @@
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\UVCSToolbar\PopupWindow\Operations\ToolbarOperationsShortcut.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\Views\PendingChanges\Dialogs\DependenciesDialog.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\UI\UnityInternals\UnityEditor\EditorGUI.cs" />
-    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\CloudDrive\Workspaces\DirectoryContent\DrawItemsGridView.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\CloudDrive\Welcome\WelcomeView.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\Views\PendingChanges\Dialogs\EmptyCommentDialog.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\Views\Branch\BranchesListHeaderState.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\Configuration\MissingEncryptionPasswordPromptHandler.cs" />
+    <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\CloudDrive\Workspaces\DirectoryContent\DrawItemsGridView.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\UI\UnityInternals\UnityEditor\ContainerWindow.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\Views\Labels\LabelsTab_Operations.cs" />
     <Compile Include="Library\PackageCache\com.unity.collab-proxy@2.12.4\Editor\UI\Tree\ListViewItemIds.cs" />

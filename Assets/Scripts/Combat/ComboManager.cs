@@ -11,6 +11,8 @@ public class ComboManager : MonoBehaviour
     public Traits lastUsedTrait;
     public static ComboManager Instance;
     public UnityEvent ComboStateChangedEvent;
+    public int additive;
+    public int mult;
     
     public void Awake()
     {
@@ -57,6 +59,14 @@ public class ComboManager : MonoBehaviour
             
     }
 
+    public int CalculateDamage(int amount)
+    {
+        //additive += trait.additive
+        //mult *= trait.mult
+        return (amount + additive) * mult;
+        
+    }
+
     public bool CanPlay(Card card)
     {
         if (lastUsedTrait == null) return true;
@@ -74,6 +84,7 @@ public class ComboManager : MonoBehaviour
 
     public void ResetCombo()
     {
+        TraitManager.Instance.ResetTrait();
         lastUsedTrait = null;
         usableTrait = null;
     }

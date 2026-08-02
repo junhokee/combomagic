@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ActionQueue : MonoBehaviour
 {
     public static ActionQueue Instance;
     private Queue<GameAction> queue = new Queue<GameAction>();
-    private bool isProcessing;
+    public bool isProcessing {get; private set;}
     
     void Awake()
     {
@@ -21,6 +22,7 @@ public class ActionQueue : MonoBehaviour
             StartCoroutine(ProcessQueue());
         }
     }
+
 
     IEnumerator ProcessQueue()
     {

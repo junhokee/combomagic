@@ -13,31 +13,19 @@ MonoBehaviour:
   m_Name: FirePunch
   m_EditorClassIdentifier: 
   title: ElectricPunch
-  description: Deal 5 damage
-  image: {fileID: 21300000, guid: 569ca92ad2fa8a74f8bd9f7e19812550, type: 3}
+  description: Deal 7 damage
+  image: {fileID: 21300000, guid: 6eec59e0c8c139244bf40359fb280f45, type: 3}
   baseTraits:
-  - {fileID: 11400000, guid: b861afe08c95a284a8d10322aa75965c, type: 2}
+  - {fileID: 11400000, guid: 1a77008ddaa0afe41a9e672b9bdb1b32, type: 2}
   - {fileID: 11400000, guid: 955da6e49a9ae514c810d01de6dab895, type: 2}
   isAttack: 1
   cardtype: 0
   effects:
-  - rid: 3936728203730616320
-  - rid: 3936728239089123329
-  - rid: 3936728283742470144
+  - rid: 3936728283742470146
   references:
     version: 2
     RefIds:
-    - rid: 3936728203730616320
+    - rid: 3936728283742470146
       type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
       data:
-        amount: 6
-    - rid: 3936728239089123329
-      type: {class: AddTraitEffect, ns: , asm: Assembly-CSharp}
-      data:
-        trait: {fileID: 11400000, guid: b861afe08c95a284a8d10322aa75965c, type: 2}
-        amount: 1
-    - rid: 3936728283742470144
-      type: {class: AddTraitEffect, ns: , asm: Assembly-CSharp}
-      data:
-        trait: {fileID: 11400000, guid: 955da6e49a9ae514c810d01de6dab895, type: 2}
-        amount: 1
+        amount: 7

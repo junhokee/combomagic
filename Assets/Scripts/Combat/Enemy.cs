@@ -36,4 +36,9 @@ public class Enemy : MonoBehaviour, ICardTarget
     {
         
     }
+
+    public Health getHealth()
+    {
+        return health;
+    }
 }

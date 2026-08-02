@@ -29,6 +29,10 @@ public class TraitManager : MonoBehaviour
         TraitsChangedEvent.Invoke(activeTraits);
     }
 
+    public int getTraitCount()
+    {
+        return activeTraits.Count;
+    }
     public void RemoveTrait(Traits trait, int stacks)
     {
         TraitInstance existing = activeTraits.Find(t => t.data == trait);
@@ -40,6 +44,18 @@ public class TraitManager : MonoBehaviour
             activeTraits.Remove(existing);
 
         TraitsChangedEvent.Invoke(activeTraits);
+    }
+
+     public void ResetTrait()
+    {
+        foreach(TraitInstance t in activeTraits)
+        {
+            if(t == null)
+            {
+                return;
+            }
+            activeTraits.Remove(t);
+        }
     }
 
     
