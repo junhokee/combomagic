@@ -547,7 +547,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hand: {fileID: 1300230114}
   deck: {fileID: 653339945}
-  enemies: []
+  enemies:
+  - {fileID: 817752674}
   player: {fileID: 1048607845}
   cardsDrawnPerTurn: 5
   StateChangedEvent:

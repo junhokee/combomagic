@@ -20,7 +20,6 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        Debug.Log("took damage?");
         currentHealth = Mathf.Max(currentHealth - amount, 0);
         HealthChangedEvent.Invoke(currentHealth, maxHealth);
 

@@ -91,7 +91,6 @@ public class ComboManager : MonoBehaviour
 
     public GameAction AddTrait()
     {
-        Debug.Log("does this work");
         return new AddTraitAction(lastUsedTrait, 1);
     }
 }

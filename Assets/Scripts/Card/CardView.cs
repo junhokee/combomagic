@@ -40,7 +40,7 @@ public class CardView : MonoBehaviour
     {
         ComboManager.Instance.ComboStateChangedEvent.RemoveListener(RefreshPlayability); // avoid leaks
     }
-
+    
 
 
     public void Initialize(Card card)

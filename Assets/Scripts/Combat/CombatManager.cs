@@ -9,7 +9,7 @@ public class CombatManager : MonoBehaviour
 
     [SerializeField] private Hand hand;
     [SerializeField] private Deck deck;
-    [SerializeField] private List<Enemy> enemies;
+    [SerializeField] public List<Enemy> enemies;
     [SerializeField] private Player player;
 
     [SerializeField] private int cardsDrawnPerTurn = 5;

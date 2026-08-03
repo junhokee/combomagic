@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9745b588596f0d4984783f28e7035b3, type: 3}
   m_Name: Electric
   m_EditorClassIdentifier: 
+  behavior:
+    rid: 3424460919209984007
   title: Electric
   image: {fileID: 21300000, guid: 04c4f58e1826b3c489e1191163d7e253, type: 3}
+  references:
+    version: 2
+    RefIds:
+    - rid: 3424460919209984007
+      type: {class: ElectricBehavior, ns: , asm: Assembly-CSharp}
+      data: 
