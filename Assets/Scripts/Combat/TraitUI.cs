@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
+
 
 public class TraitUI : MonoBehaviour
 {
@@ -20,6 +22,8 @@ public class TraitUI : MonoBehaviour
         foreach (var row in spawnedRows)
             Destroy(row);
         spawnedRows.Clear();
+
+
         foreach (var trait in traits)
         {
             GameObject rowObj = Instantiate(traitRowPrefab, container);

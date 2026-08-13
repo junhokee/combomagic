@@ -24,7 +24,7 @@ public class Card
     }
     public void Play(ICardTarget target)
     {
-        ComboManager.Instance.RegisterCardPlayed(this);
+        
         
         foreach (CardEffect effect in data.effects)
         {
@@ -33,6 +33,8 @@ public class Card
             ActionQueue.Instance.Enqueue(action);
 
         }
+
+        ComboManager.Instance.RegisterCardPlayed(this);
         
         
     }

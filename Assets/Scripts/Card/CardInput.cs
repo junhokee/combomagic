@@ -127,10 +127,10 @@ public class CardInput : MonoBehaviour
         // Check targets FIRST — enemies/player take priority over generic drop zones
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out RaycastHit targetHit, 100f, targetLayer))
+        if (Physics.Raycast(ray, out RaycastHit targetHit, 1000f, targetLayer))
             return targetHit.collider.GetComponentInParent<ICardTarget>();
 
-        if (Physics.Raycast(ray, out RaycastHit zoneHit, 100f, dropLayer))
+        if (Physics.Raycast(ray, out RaycastHit zoneHit, 1000f, dropLayer))
             return zoneHit.collider.GetComponentInParent<ICardTarget>();
 
         return null;

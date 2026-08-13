@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,6 +15,23 @@ public class TraitManager : MonoBehaviour
     }
 
     public void AddTrait(Traits trait, int stacks)
+    {
+
+        TraitInstance existing = activeTraits.Find(t => t.data == trait);
+         if (existing != null)
+        {
+            int newStack = existing.stacks + stacks;
+            activeTraits.Remove(existing);
+            activeTraits.Insert(0,  new TraitInstance(trait, newStack));
+        }
+        else
+        {
+            activeTraits.Insert(0, new TraitInstance(trait, stacks));
+        }
+
+        TraitsChangedEvent.Invoke(activeTraits);
+    }
+    public void AddTraitCard(Traits trait, int stacks)
     {
 
         TraitInstance existing = activeTraits.Find(t => t.data == trait);

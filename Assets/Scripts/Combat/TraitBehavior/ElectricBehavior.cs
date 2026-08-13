@@ -10,7 +10,7 @@ public class ElectricBehavior : TraitBehavior
 
         foreach(Enemy e in CombatManager.Instance.enemies)
         {
-            BonusDamageAction action = new BonusDamageAction(e, (int)(amount * 1.5f/100 * instance.stacks), sourceCard);
+            BonusDamageAction action = new BonusDamageAction(e, (int)(amount * (0.1 + 1f/100 * instance.stacks)), sourceCard);
             ActionQueue.Instance.Enqueue(action);
         }
         

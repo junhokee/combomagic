@@ -5,10 +5,12 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 50;
     [SerializeField] private int currentHealth;
+    public HealthBar healthBar;
 
     public int CurrentHealth => currentHealth;
     public int MaxHealth => maxHealth;
     public bool IsDead => currentHealth <= 0;
+
 
     public UnityEvent<int, int> HealthChangedEvent; // (current, max) — for UI updates
     public UnityEvent DiedEvent;
@@ -16,13 +18,14 @@ public class Health : MonoBehaviour
     void Awake()
     {
         currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     public void TakeDamage(int amount)
     {
         currentHealth = Mathf.Max(currentHealth - amount, 0);
         HealthChangedEvent.Invoke(currentHealth, maxHealth);
-
+        healthBar.SetHealth(currentHealth);
         if (currentHealth <= 0)
             DiedEvent.Invoke();
     }
@@ -31,5 +34,6 @@ public class Health : MonoBehaviour
     {
         currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
         HealthChangedEvent.Invoke(currentHealth, maxHealth);
+        healthBar.SetHealth(currentHealth);
     }
 }
