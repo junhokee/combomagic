@@ -36,4 +36,9 @@ public class Health : MonoBehaviour
         HealthChangedEvent.Invoke(currentHealth, maxHealth);
         healthBar.SetHealth(currentHealth);
     }
+
+    public void SetMaxHealth(int amount)
+    {
+        maxHealth = amount;
+    }
 }

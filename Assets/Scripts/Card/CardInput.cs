@@ -59,6 +59,7 @@ public class CardInput : MonoBehaviour
         transform.position = mainCamera.ScreenToWorldPoint(screenPoint);
         sortingGroup.sortingOrder = 100;
         ICardTarget target = FindTargetUnderCard();
+        Debug.Log(target);
     }
 
     void OnMouseUp()

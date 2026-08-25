@@ -8,18 +8,26 @@ public class BonusDamageAction : GameAction
     private int amount;
     private Card sourceCard;
 
-    public BonusDamageAction(ICardTarget target, int amount, Card sourceCard)
+    public BonusDamageAction(ICardTarget target, int amount, IActionSource source)
     {
         this.target = target;
         this.amount = amount;
-        this.sourceCard = sourceCard;
+        this.sourceCard = (Card)source;
     }
 
     public override IEnumerator Execute()
     {
-        
-        Debug.Log("bonus damage" + amount);
+         Debug.Log("bonus damage " + amount);
+        Debug.Log("target = " + target);
+
+        if (target == null)
+        {
+            Debug.LogError("BonusDamageAction: target is NULL!");
+            yield break;
+        }
+
         target.ReceiveDamage(amount);
+
         yield return new WaitForSeconds(0.3f);
     }
 }

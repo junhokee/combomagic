@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 [System.Serializable]
 
-public class BonusDamageEffect : CardEffect
+public class BonusDamageEffect : Effect
 {
     public int amount;
 
-    public override GameAction CreateAction(ICardTarget target, Card sourceCard)
+    public override GameAction CreateAction(ICardTarget target, IActionSource source)
     {
-        Debug.Log("is this working?");
-        return new BonusDamageAction(target, amount, sourceCard);
+        Debug.Log("is this working?" + target);
+        return new BonusDamageAction(target, amount, source);
     }
 }

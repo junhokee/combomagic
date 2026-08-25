@@ -86,7 +86,7 @@ public class CardView : MonoBehaviour
             if (target != null && target.IsValidTarget(Card) && ComboManager.Instance.CanPlay(Card))
             {
                 Card.Play(target);
-                Debug.Log("invoked");
+                Debug.Log("invoked" + target);
                 input.PlayedEvent.Invoke(input);
             } else{
                 Debug.Log("end drag");

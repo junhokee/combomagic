@@ -13,7 +13,7 @@ public class CardData : ScriptableObject
     public List<Traits> baseTraits;
     public bool isAttack;
     public CardType cardtype;
-    [SerializeReference, SR] public List<CardEffect> effects;
+    [SerializeReference, SR] public List<Effect> effects;
     
 
 }

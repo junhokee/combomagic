@@ -9,7 +9,8 @@ public class CombatManager : MonoBehaviour
 
     [SerializeField] private Hand hand;
     [SerializeField] private Deck deck;
-    [SerializeField] public List<Enemy> enemies;
+    [SerializeField] public List<EnemyData> enemyDatas;
+    public List<Enemy> enemies;
     [SerializeField] private Player player;
 
     [SerializeField] private int cardsDrawnPerTurn = 5;
@@ -24,6 +25,7 @@ public class CombatManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(RunCombat());
+        
     }
 
     IEnumerator RunCombat()
@@ -72,7 +74,7 @@ public class CombatManager : MonoBehaviour
         {
             if (enemy.getHealth().IsDead) continue;
 
-            // enemy.TakeTurn(player); // enemy decides + queues its own GameActions
+            enemy.TakeTurn(); // enemy decides + queues its own GameActions
             yield return new WaitUntil(() => !ActionQueue.Instance.isProcessing);
         }
 
@@ -92,9 +94,9 @@ public class CombatManager : MonoBehaviour
         for (int i = 0; i < amount; i++)
         {
             Card drawn = deck.DrawCard();
-            if (drawn == null) break; // empty deck, handle reshuffle elsewhere
+            if (drawn == null) break;
 
-            hand.AddCard(drawn); // assuming Hand.AddCard is adjusted to take Card and spawn its own CardView/CardInput
+            hand.AddCard(drawn); 
         }
     }
 

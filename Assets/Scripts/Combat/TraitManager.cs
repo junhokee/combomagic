@@ -66,14 +66,8 @@ public class TraitManager : MonoBehaviour
 
      public void ResetTrait()
     {
-        foreach(TraitInstance t in activeTraits)
-        {
-            if(t == null)
-            {
-                return;
-            }
-            activeTraits.Remove(t);
-        }
+         activeTraits.Clear();
+        TraitsChangedEvent.Invoke(activeTraits);
     }
 
     

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card
+public class Card: IActionSource
 {
     public CardData data;
     public string Title => data.title;
@@ -26,7 +26,7 @@ public class Card
     {
         
         
-        foreach (CardEffect effect in data.effects)
+        foreach (Effect effect in data.effects)
         {
 
             GameAction action = effect.CreateAction(target, this);

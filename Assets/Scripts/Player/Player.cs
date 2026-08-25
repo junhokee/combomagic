@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, ICardTarget
 {
     [SerializeField] private Health health;
+    void Awake()
+    {
+        Instance = this;
+    }
     public HandType handType;
+    public static Player Instance;
     public enum HandType
     {
         Hand,
@@ -22,6 +27,20 @@ public class Player : MonoBehaviour
     public Health getHealth()
     {
         return health;
+    }
+
+
+    public void DragCard()
+    {
+        
+    }
+    public void HoverCard()
+    {
+        
+    }
+    public bool IsValidTarget(Card card)
+    {
+        return false;
     }
 
     

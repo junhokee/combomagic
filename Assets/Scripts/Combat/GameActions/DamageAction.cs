@@ -10,11 +10,11 @@ public class DamageAction : GameAction
     private double mult = 1;
     private Card sourceCard;
 
-    public DamageAction(ICardTarget target, int amount, Card sourceCard)
+    public DamageAction(ICardTarget target, int amount, IActionSource source)
     {
         this.target = target;
         this.amount = amount;
-        this.sourceCard = sourceCard;
+        this.sourceCard = (Card)source;
     }
 
     public override IEnumerator Execute()
