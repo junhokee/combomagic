@@ -48,7 +48,11 @@ public class CombatManager : MonoBehaviour
     IEnumerator PlayerTurnRoutine()
     {
         SetState(CombatState.PlayerTurnStart);
-        ComboManager.Instance.ResetCombo();
+        foreach(Card c in hand.cards)
+        {
+            
+        }
+        
         DrawCards(cardsDrawnPerTurn);
 
         yield return null;
@@ -60,6 +64,7 @@ public class CombatManager : MonoBehaviour
         yield return new WaitUntil(() => !waitingForEndTurn);
 
         SetState(CombatState.PlayerTurnEnd);
+        ComboManager.Instance.ResetCombo();
         yield return new WaitUntil(() => !ActionQueue.Instance.isProcessing); // let any lingering actions finish
     }
 

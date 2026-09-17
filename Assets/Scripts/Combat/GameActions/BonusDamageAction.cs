@@ -18,7 +18,6 @@ public class BonusDamageAction : GameAction
     public override IEnumerator Execute()
     {
          Debug.Log("bonus damage " + amount);
-        Debug.Log("target = " + target);
 
         if (target == null)
         {

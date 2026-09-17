@@ -23,6 +23,7 @@ MonoBehaviour:
   effects:
   - rid: 3936728283742470147
   - rid: 3936728283742470148
+  handAnimationTrigger: isPunching
   references:
     version: 2
     RefIds:

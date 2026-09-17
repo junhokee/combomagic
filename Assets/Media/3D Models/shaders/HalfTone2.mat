@@ -59,13 +59,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Circle_Density: 41
-    - _Falloff_Threshold: -4
-    - _Lit_threshold: -8.7
+    - _Circle_Density: 50
+    - _Falloff_Threshold: -5.4
+    - _Lit_threshold: -13.1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Rotation: 0
-    - _Shading_Mult: 0.023
+    - _Shading_Mult: 0
     - _Softness: 0.226
     - _USE_SCREEN_SPACE: 1
     m_Colors:

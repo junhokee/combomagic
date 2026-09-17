@@ -39,7 +39,8 @@ public class Enemy : MonoBehaviour, ICardTarget
 
     public void TakeTurn()
     {
-        
+        ChooseNextMove();
+        currentMove.Execute(Player.Instance, this);
     }
 
     public void HoverCard()

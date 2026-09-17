@@ -87,6 +87,7 @@ public class ComboManager : MonoBehaviour
         TraitManager.Instance.ResetTrait();
         lastUsedTrait = null;
         usableTrait = null;
+        ComboStateChangedEvent.Invoke();
     }
 
     public GameAction AddTrait()

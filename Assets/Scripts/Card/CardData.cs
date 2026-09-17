@@ -14,6 +14,7 @@ public class CardData : ScriptableObject
     public bool isAttack;
     public CardType cardtype;
     [SerializeReference, SR] public List<Effect> effects;
+    public string handAnimationTrigger;
     
 
 }

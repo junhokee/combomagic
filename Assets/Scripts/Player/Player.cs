@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour, ICardTarget
 {
     [SerializeField] private Health health;
+    public GameObject glove;
     void Awake()
     {
         Instance = this;

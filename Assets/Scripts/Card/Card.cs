@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class Card: IActionSource
     public CardType cardType => data.cardtype;
     public bool isAttack => data.isAttack;
     public List<Traits> traits;
+    public string handAnimationTrigger;
     
 
     public Card(CardData cardData)
@@ -24,12 +26,16 @@ public class Card: IActionSource
     }
     public void Play(ICardTarget target)
     {
-        
-        
+        if(data.cardtype == CardType.Monster)
+        {
+            
+        }
+        ActionQueue.Instance.Enqueue(new HandAnimationAction(data.handAnimationTrigger));
         foreach (Effect effect in data.effects)
         {
 
             GameAction action = effect.CreateAction(target, this);
+            
             ActionQueue.Instance.Enqueue(action);
 
         }

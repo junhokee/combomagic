@@ -17,7 +17,9 @@ public class Hand : MonoBehaviour
     [SerializeField] private CardData FirePunch;
     public CardInput selectedCard;
     private bool isCrossing = false;
+    public List<Card> cards = new List<Card>();
     private List<CardInput> cardInputs = new List<CardInput>();
+    private Dictionary<Card, CardView> cardViews = new Dictionary<Card, CardView>();
     
 
     
@@ -32,7 +34,7 @@ public class Hand : MonoBehaviour
                 CardView view = Instantiate(cardPrefab);
                 view.Initialize(electricPunch);
                 CardInput input = view.gameObject.GetComponent<CardInput>();
-                AddCard(input);
+                AddCardInput(input);
             }
              for (int i = 0; i < 5; i++)
             {
@@ -40,7 +42,7 @@ public class Hand : MonoBehaviour
                 CardView view = Instantiate(cardPrefab);
                 view.Initialize(electricPunch);
                 CardInput input = view.gameObject.GetComponent<CardInput>();
-                AddCard(input);
+                AddCardInput(input);
             }
         }
     void Update()
@@ -109,7 +111,7 @@ public class Hand : MonoBehaviour
             
         }
     }
-    public Transform AddCard(CardInput card)
+    public Transform AddCardInput(CardInput card)
     {
         GameObject slotObj = new GameObject("Slot");
         slotObj.transform.SetParent(transform);
@@ -134,10 +136,10 @@ public class Hand : MonoBehaviour
     {
         CardView cardObj = Instantiate(cardPrefab);
         CardInput cardInput = cardObj.GetComponent<CardInput>();
-
+        cards.Add(card);
         cardObj.Initialize(card); // sets up visuals, traits, etc — your existing Initialize method
-
-        return AddCard(cardInput);
+        cardViews.Add(card, cardObj);
+        return AddCardInput(cardInput);
     }
 
 
@@ -148,6 +150,8 @@ public class Hand : MonoBehaviour
         {
             selectedCard = null;
         }
+        CardView view = card.GetComponent<CardView>();
+        cards.Remove(view.Card);
         Transform slot = card.transform.parent;
         cardInputs.Remove(card);
         Destroy(slot.gameObject);

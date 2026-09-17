@@ -116,6 +116,7 @@ public class CardView : MonoBehaviour
 
         public void RefreshPlayability()
         {
+            Debug.Log("refreshed");
             bool canPlay = ComboManager.Instance.CanPlay(Card);
             playable = canPlay;
             ShowDisabled(!canPlay);
