@@ -15,7 +15,6 @@ public class HandAnimationAction : GameAction
     public override IEnumerator Execute()
     {
         HandAnimator.Instance.Play(animation);
-        Debug.Log("is it working" + animation);
 
         yield return new WaitForSeconds(0.9f);
     }
