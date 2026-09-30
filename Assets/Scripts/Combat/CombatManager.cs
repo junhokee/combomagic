@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,6 +15,7 @@ public class CombatManager : MonoBehaviour
     [SerializeField] private Player player;
 
     [SerializeField] private int cardsDrawnPerTurn = 5;
+    public GameObject defaultHand;
 
     public CombatState State { get; private set; }
     public UnityEvent<CombatState> StateChangedEvent;
@@ -31,6 +33,7 @@ public class CombatManager : MonoBehaviour
     IEnumerator RunCombat()
     {
         SetState(CombatState.StartCombat);
+        ActionQueue.Instance.Enqueue(new SwapGloveAction(defaultHand));
         yield return new WaitForSeconds(0.5f); // intro delay
 
         while (true)

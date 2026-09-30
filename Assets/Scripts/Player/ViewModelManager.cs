@@ -4,7 +4,6 @@ using Unity.VisualScripting;
 public class ViewModelManager : MonoBehaviour
 {
     [SerializeField] private Transform modelHolder;
-    [SerializeField] private Animator viewmodelAnimator;
 
     private GameObject currentViewmodel;
     private Animator currentAnimator;
@@ -16,27 +15,48 @@ public class ViewModelManager : MonoBehaviour
 
     public void Equip(GameObject prefab)
     {
-        
+        SwapViewmodel(prefab);
+        Debug.Log("did this work?");
     }
 
     public IEnumerator SwapViewmodel(GameObject newPrefab)
     {
-        viewmodelAnimator.SetTrigger("Lower");
+        // lower
 
         yield return new WaitForSeconds(0.1f);
-
+        Debug.Log(newPrefab + " asudfhaifhasui");
         if (currentViewmodel != null)
-            Destroy(currentViewmodel);
+        {
+            Debug.Log("wehjiew");
+               Destroy(currentViewmodel);
+                currentViewmodel = Instantiate(newPrefab, modelHolder);
+                currentViewmodel.transform.localPosition = Vector3.zero;
+                currentViewmodel.transform.localRotation = Quaternion.identity;
+                currentAnimator =
+                    currentViewmodel.GetComponent<Animator>();
+                
+                //raise
 
-        currentViewmodel = Instantiate(newPrefab, modelHolder);
+                yield return new WaitForSeconds(0.6f);
+            
+            
+        }
+        else
+        {
+            currentViewmodel = Instantiate(newPrefab, modelHolder);
+                currentViewmodel.transform.localPosition = Vector3.zero;
+                currentViewmodel.transform.localRotation = Quaternion.identity;
+                currentAnimator =
+                    currentViewmodel.GetComponent<Animator>();
+                
+                //raise
 
-        currentViewmodel.transform.localPosition = Vector3.zero;
-        currentViewmodel.transform.localRotation = Quaternion.identity;
-        currentAnimator =
-            currentViewmodel.GetComponent<Animator>();
-        currentAnimator.SetTrigger("Enter");
-        viewmodelAnimator.SetTrigger("Raise");
-
-        yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.6f);
+        }
+        
+        
+            
+        
+       
     }
 }

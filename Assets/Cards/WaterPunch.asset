@@ -24,6 +24,7 @@ MonoBehaviour:
   - rid: 3936728283742470147
   - rid: 3936728283742470148
   handAnimationTrigger: isPunching
+  handFab: {fileID: 1525228536877632189, guid: 579bd0452f8c4cb42bc5f9fccc3366da, type: 3}
   references:
     version: 2
     RefIds:

@@ -55,14 +55,12 @@ public class Hand : MonoBehaviour
 
             int selectedIndex = cardInputs.IndexOf(selectedCard);
 
-            // dragged card moved to the RIGHT of a card that's currently ahead of it in the list
             if (selectedCard.transform.position.x > cardInputs[i].transform.position.x && selectedIndex < i)
             {
                 Swap(selectedIndex, i);
                 break;
             }
 
-            // dragged card moved to the LEFT of a card that's currently behind it in the list
             if (selectedCard.transform.position.x < cardInputs[i].transform.position.x && selectedIndex > i)
             {
                 Swap(selectedIndex, i);
@@ -84,9 +82,8 @@ public class Hand : MonoBehaviour
             cardInputs[indexB].transform.localRotation = Quaternion.identity;
 
             cardInputs[indexA].transform.SetParent(slotB);
-            // don't reset selectedCard's local position — it's still being dragged, following the mouse
 
-            // swap them in the list too, so order matches new parenting
+            // swap them in the list so order matches new parenting
             (cardInputs[indexA], cardInputs[indexB]) = (cardInputs[indexB], cardInputs[indexA]);
 
             isCrossing = false;

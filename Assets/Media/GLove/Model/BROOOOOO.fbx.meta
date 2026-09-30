@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e636aa29ec468194592a06f78abb8712
+guid: 1005c079c3b85f6458ccba227ec3756e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -62,9 +62,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Glove_Punch
-      takeName: Glove_Punch
-      internalID: -4838828078126897317
+      name: Glove_Punch.001
+      takeName: Glove_Punch.001
+      internalID: 5050347835145632815
       firstFrame: 0
       lastFrame: 34
       wrapMode: 0
@@ -91,11 +91,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Glove_Punch.001
-      takeName: Glove_Punch.001
-      internalID: 5050347835145632815
+      name: Glove_Entry.001
+      takeName: Glove_Entry.001
+      internalID: 5569109010046062182
       firstFrame: 0
-      lastFrame: 34
+      lastFrame: 16
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -157,8 +157,8 @@ ModelImporter:
     useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
-    normalSmoothAngle: 145
-    normalImportMode: 1
+    normalSmoothAngle: 60
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0

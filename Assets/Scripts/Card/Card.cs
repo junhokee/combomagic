@@ -26,6 +26,7 @@ public class Card: IActionSource
     }
     public void Play(ICardTarget target)
     {
+        ActionQueue.Instance.Enqueue(new SwapGloveAction(data.handFab));
         if(data.cardtype == CardType.Monster)
         {
             
