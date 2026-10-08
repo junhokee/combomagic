@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using SerializeReferenceEditor;
-
+using System;
+[Serializable]
 [CreateAssetMenu(menuName = "Data/NewEnemy")]
 public class EnemyData : ScriptableObject
 {

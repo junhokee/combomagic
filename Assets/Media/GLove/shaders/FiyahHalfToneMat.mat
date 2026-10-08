@@ -25,9 +25,10 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _Circle_Density: 13.9
-    - _Falloff_Threshold: 1.1
-    - _Lit_threshold: -1.3
+    - _Circle_Density: 23
+    - _Falloff_Threshold: -0.9
+    - _Lit_threshold: -1.7
+    - _QueueControl: 0
     - _Shading_Mult: 0
     - _Softness: 0.034
     m_Colors: []

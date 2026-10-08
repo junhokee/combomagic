@@ -27,7 +27,9 @@ public class ViewModelManager : MonoBehaviour
         Debug.Log(newPrefab + " asudfhaifhasui");
         if (currentViewmodel != null)
         {
-            Debug.Log("wehjiew");
+            string cleanName = currentViewmodel.name.Replace("(Clone)", "").Trim();
+            Debug.Log(cleanName + newPrefab.name);
+            if(cleanName != newPrefab.name){
                Destroy(currentViewmodel);
                 currentViewmodel = Instantiate(newPrefab, modelHolder);
                 currentViewmodel.transform.localPosition = Vector3.zero;
@@ -38,6 +40,7 @@ public class ViewModelManager : MonoBehaviour
                 //raise
 
                 yield return new WaitForSeconds(0.6f);
+            }
             
             
         }
