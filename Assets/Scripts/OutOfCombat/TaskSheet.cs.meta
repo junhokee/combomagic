@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 3d179e8bfc821f546b9456755fd9b637
+guid: f93b49c0c6f933d458516bcf561ee77f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - image: {instanceID: 0}
-  - taskSheetFab: {fileID: 919132149155446097, guid: 993653396c921b04f8680bf2bcf8a698, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

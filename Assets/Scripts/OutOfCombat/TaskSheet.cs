@@ -1,20 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using SerializeReferenceEditor;
-using System;
 
-[CreateAssetMenu(menuName = "Data/Task")]
-public class TaskSheet : ScriptableObject
+public class TaskSheet : MonoBehaviour
 {
-    public string title;
-    public string description;
-    public Sprite image;
-    public List<EnemyData> enemies;
-    public GameObject taskSheetFab;
-    public Boolean conditions;
-    public int stage;
-    
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }
