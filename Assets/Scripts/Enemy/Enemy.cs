@@ -8,11 +8,12 @@ public class Enemy : MonoBehaviour, ICardTarget
 
     public EnemyData Data { get; private set; }
     private EnemyMove currentMove;
+    [SerializeField] private SpriteRenderer spriteRenderer;
     public void Initialize(EnemyData data)
         {
             Data = data;
             health.SetMaxHealth(data.MaxHealth);
-
+            spriteRenderer.sprite = data.image;
             // if (data.animatorController != null)
             //     animator.runtimeAnimatorController = data.animatorController;
 

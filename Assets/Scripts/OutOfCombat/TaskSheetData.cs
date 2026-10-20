@@ -12,6 +12,7 @@ public class TaskSheetData : ScriptableObject
     public string description;
     public Sprite image;
     public List<EnemyData> enemies;
+    public List<Vector3> positions;
     public GameObject taskSheetFab;
     public Boolean conditions;
     public int stage;

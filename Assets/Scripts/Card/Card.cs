@@ -31,7 +31,7 @@ public class Card: IActionSource
         {
             
         }
-        ActionQueue.Instance.Enqueue(new HandAnimationAction(data.handAnimationTrigger));
+        ActionQueue.Instance.Enqueue(new HandAnimationAction(data.handAnimationTrigger, data.animationTime));
         foreach (Effect effect in data.effects)
         {
 

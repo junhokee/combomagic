@@ -11,6 +11,7 @@ public class EnemyData : ScriptableObject
     public GameObject enemyPrefab;
     public int MaxHealth;
     public List<EnemyMoveData> possibleMoves;
+    public Sprite image;
     
     
     

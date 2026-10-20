@@ -16,6 +16,10 @@ public static class GameSceneManager
     {
         SceneManager.LoadScene(MAIN_MENU);
     }
+    public static void LoadStarters()
+    {
+        SceneManager.LoadScene("Starters");
+    }
 
     public static void LoadStageSelection()
     {

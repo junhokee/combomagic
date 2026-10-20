@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b603a465a1e3e504888bf4586e1dbb89, type: 3}
+  m_Name: Smash
+  m_EditorClassIdentifier: 
+  title: Smash
+  description: Smashes
+  image: {fileID: 0}
+  baseTraits: []
+  isAttack: 1
+  effects:
+  - rid: 3424461167624454144
+  references:
+    version: 2
+    RefIds:
+    - rid: 3424461167624454144
+      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        amount: 20

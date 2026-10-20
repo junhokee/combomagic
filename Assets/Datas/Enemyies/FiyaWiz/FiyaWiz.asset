@@ -16,3 +16,4 @@ MonoBehaviour:
   MaxHealth: 50
   possibleMoves:
   - {fileID: 11400000, guid: 5cddd37107e153d468e9907bcddfe71d, type: 2}
+  image: {fileID: 21300000, guid: 6ebbfd7b12e87ae499a39d6759b99331, type: 3}

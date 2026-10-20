@@ -15,6 +15,7 @@ public class CardData : ScriptableObject
     public CardType cardtype;
     [SerializeReference, SR] public List<Effect> effects;
     public string handAnimationTrigger;
+    public float animationTime;
     public GameObject handFab;
     
 

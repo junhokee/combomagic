@@ -23,7 +23,8 @@ MonoBehaviour:
   effects:
   - rid: 3936728283742470146
   handAnimationTrigger: isPunching
-  handFab: {fileID: 1525228536877632189, guid: 579bd0452f8c4cb42bc5f9fccc3366da, type: 3}
+  animationTime: 0.9
+  handFab: {fileID: 241155928196107842, guid: fac750cfba784f64985f4bcae2f97f5f, type: 3}
   references:
     version: 2
     RefIds:

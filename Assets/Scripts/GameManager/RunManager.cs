@@ -17,7 +17,8 @@ public class RunManager : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
+        //THIS IS SUPER DUPER TEMPORARY
+        StartNewRun();
     }
 
     public void StartNewRun()
@@ -28,6 +29,25 @@ public class RunManager : MonoBehaviour
     public void SelectStage(TaskSheetData stage)
     {
         CurrentRun.currentStage = stage;
+    }
+
+    public void GameOver()
+    {
+        GameSceneManager.LoadScene("GameOver");
+    }
+    public void CompleteEncounter()
+    {
+        CurrentRun.currentFloor++;
+        GameSceneManager.LoadScene("RewardScene");
+    }
+
+    public void SelectStage()
+    {
+        GameSceneManager.LoadScene("OutOfCombat");
+    }
+    public void SelectStarter()
+    {
+        GameSceneManager.LoadScene("Starters");
     }
 
     public void EndRun()

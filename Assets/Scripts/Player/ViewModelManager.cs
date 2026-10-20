@@ -24,11 +24,10 @@ public class ViewModelManager : MonoBehaviour
         // lower
 
         yield return new WaitForSeconds(0.1f);
-        Debug.Log(newPrefab + " asudfhaifhasui");
         if (currentViewmodel != null)
         {
             string cleanName = currentViewmodel.name.Replace("(Clone)", "").Trim();
-            Debug.Log(cleanName + newPrefab.name);
+
             if(cleanName != newPrefab.name){
                Destroy(currentViewmodel);
                 currentViewmodel = Instantiate(newPrefab, modelHolder);

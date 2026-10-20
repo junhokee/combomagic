@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    public static EnemySpawner Instance;
     public GameObject enemyPrefab;
     public EnemyData fiyadata;
 
-    void Start()
+    void Awake()
     {
-        SpawnEnemy(fiyadata, new Vector3(2.37f, 3.9f, 113.9f));
+        Instance = this;
+        
     }
 
     public Enemy SpawnEnemy(EnemyData data, Vector3 position)

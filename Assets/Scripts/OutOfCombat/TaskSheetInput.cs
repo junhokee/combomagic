@@ -19,6 +19,7 @@ public class TaskSheetInput : MonoBehaviour
     private float distanceFromCamera;
     private Vector3 hoverOffset = new Vector3(0, 0.3f, 0);
     private static TaskSheetInput currentlyHovered;
+    public TaskSheetView tsv;
 
     private Transform mySlot;
     [SerializeField] private GameObject outline;
@@ -36,9 +37,14 @@ public class TaskSheetInput : MonoBehaviour
 
     void OnMouseDown()
     {   
-        
+        Debug.Log("RunManager: " + RunManager.Instance);
+        Debug.Log("TaskSheetView: " + tsv);
+
+        if (tsv != null)
+            Debug.Log("TaskSheetData: " + tsv.TaskSheetData);
+
+        RunManager.Instance.SelectStage(tsv.TaskSheetData);
         GameSceneManager.LoadScene("SampleScene");
-        
     }
 
 

@@ -16,6 +16,7 @@ public class HandAnimator : MonoBehaviour
 
     public void Play(string trigger)
     {
+        Debug.Log("is this workingWHGHRHUH|WRHU" + trigger);
         animator.SetTrigger(trigger);
     }
 }

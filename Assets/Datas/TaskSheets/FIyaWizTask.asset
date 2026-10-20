@@ -15,7 +15,11 @@ MonoBehaviour:
   title: FIYAWIZ
   description: Fight a fiyawiz
   image: {fileID: 0}
-  enemies: []
+  enemies:
+  - {fileID: 11400000, guid: 3062ce537d12b8243a4b33e6c4682a24, type: 2}
+  positions:
+  - {x: 2.07, y: 3.9, z: 113.9}
   taskSheetFab: {fileID: 919132149155446097, guid: 993653396c921b04f8680bf2bcf8a698, type: 3}
   conditions: 0
   stage: 0
+  reward: 10

@@ -20,9 +20,25 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 955da6e49a9ae514c810d01de6dab895, type: 2}
   isAttack: 1
   cardtype: 1
-  effects: []
-  handAnimationTrigger: 
+  effects:
+  - rid: 5019918486494511104
+  - rid: 5019918486494511105
+  - rid: 5019918486494511106
+  handAnimationTrigger: Attack_FiyahMonstah
+  animationTime: 0.5
   handFab: {fileID: 4176919465940687988, guid: 89fa2c10b728abd4d830f33c09772bb8, type: 3}
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 5019918486494511104
+      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        amount: 1
+    - rid: 5019918486494511105
+      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        amount: 1
+    - rid: 5019918486494511106
+      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        amount: 1

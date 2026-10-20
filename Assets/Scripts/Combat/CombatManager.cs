@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -19,6 +20,7 @@ public class CombatManager : MonoBehaviour
 
     public CombatState State { get; private set; }
     public UnityEvent<CombatState> StateChangedEvent;
+    private TaskSheetData data;
     void Awake()
     {
         Instance = this;
@@ -26,12 +28,21 @@ public class CombatManager : MonoBehaviour
 
     void Start()
     {
+        data = RunManager.Instance.CurrentRun.currentStage;
+
+        
         StartCoroutine(RunCombat());
         
     }
 
     IEnumerator RunCombat()
     {
+        Debug.Log(EnemySpawner.Instance);
+
+        for(int i = 0; i < data.enemies.Count; i ++)
+        {
+            EnemySpawner.Instance.SpawnEnemy(data.enemies[i], data.positions[i]);
+        }   
         SetState(CombatState.StartCombat);
         ActionQueue.Instance.Enqueue(new SwapGloveAction(defaultHand));
         yield return new WaitForSeconds(0.5f); // intro delay
@@ -40,12 +51,25 @@ public class CombatManager : MonoBehaviour
         {
             yield return StartCoroutine(PlayerTurnRoutine());
 
-            if (CheckCombatEnd()) yield break;
+            if (CheckCombatEnd()) break;
 
             yield return StartCoroutine(EnemyTurnRoutine());
 
-            if (CheckCombatEnd()) yield break;
+            if (CheckCombatEnd()) break;
         }
+        yield return new WaitUntil(
+            () => !ActionQueue.Instance.isProcessing
+        );
+
+        if (State == CombatState.Victory)
+        {
+            RunManager.Instance.CompleteEncounter();
+        }
+        else if (State == CombatState.Defeat)
+        {
+            RunManager.Instance.GameOver();
+        }
+
     }
 
     IEnumerator PlayerTurnRoutine()
