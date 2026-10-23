@@ -12,5 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 674a0b10dba963c48882829ff37d6934, type: 3}
   m_Name: NormalStarterPack
   m_EditorClassIdentifier: 
-  title: 
-  cards: []
+  title: Normal
+  cards:
+  - {fileID: 11400000, guid: 83724fa6ac6c9a845a03b530540b9405, type: 2}
+  - {fileID: 11400000, guid: 83724fa6ac6c9a845a03b530540b9405, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 901b4c92de7d9574eab00a921359b170, type: 2}
+  - {fileID: 11400000, guid: 901b4c92de7d9574eab00a921359b170, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}
+  - {fileID: 11400000, guid: 0e3d345aae35ad74e99eeeb51a761a38, type: 2}

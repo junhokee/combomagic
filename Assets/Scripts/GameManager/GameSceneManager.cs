@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public static class GameSceneManager
 {
     private const string MAIN_MENU = "MainMenu";
-    private const string STAGE_SELECT = "StageSelection";
+    private const string STAGE_SELECT = "OutOfCombat";
     private const string BATTLE = "Battle";
 
     public static void LoadScene(String scene)

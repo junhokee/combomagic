@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class FireBehavior : TraitBehavior
 {
-    public override int ModifyAdd(int add, TraitInstance instance, Card sourceCard)
+    public override double ModifyMult(double mult, TraitInstance instance, Card sourceCard)
     {
-        return add + (int)Math.Pow(2, instance.stacks);
+        return mult + 5 * instance.stacks;
     }
 
     public void OnTurnStart()

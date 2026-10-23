@@ -692,6 +692,7 @@ MonoBehaviour:
   spacing: 5
   traitPrefab: {fileID: 9155078206402510159, guid: f13ef9d6262812a4f882284d199b0979, type: 3}
   cardInput: {fileID: 7660238703754259277}
+  playable: 0
 --- !u!210 &1001411977631409952
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -759,3 +760,6 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 8
+  dropLayer:
+    serializedVersion: 2
+    m_Bits: 64

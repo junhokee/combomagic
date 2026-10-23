@@ -25,7 +25,7 @@ MonoBehaviour:
   - rid: 3936728283742470148
   handAnimationTrigger: isPunching
   animationTime: 0.9
-  handFab: {fileID: 1525228536877632189, guid: 579bd0452f8c4cb42bc5f9fccc3366da, type: 3}
+  handFab: {fileID: 241155928196107842, guid: fac750cfba784f64985f4bcae2f97f5f, type: 3}
   references:
     version: 2
     RefIds:
@@ -36,4 +36,4 @@ MonoBehaviour:
     - rid: 3936728283742470148
       type: {class: HealEffect, ns: , asm: Assembly-CSharp}
       data:
-        amount: 5
+        amount: 20

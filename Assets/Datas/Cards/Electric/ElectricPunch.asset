@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d562a2edccd55b469b6c20542120724, type: 3}
+  m_Name: ElectricPunch
+  m_EditorClassIdentifier: 
+  title: ElectricPunch
+  description: Deal 5 damage, Gain 1 Electric Trait
+  image: {fileID: 21300000, guid: 569ca92ad2fa8a74f8bd9f7e19812550, type: 3}
+  baseTraits:
+  - {fileID: 11400000, guid: b861afe08c95a284a8d10322aa75965c, type: 2}
+  - {fileID: 11400000, guid: 955da6e49a9ae514c810d01de6dab895, type: 2}
+  isAttack: 1
+  cardtype: 0
+  effects:
+  - rid: 3936728203730616320
+  - rid: 5019918716227026944
+  - rid: 3936728239089123329
+  handAnimationTrigger: isPunching
+  animationTime: 0.9
+  handFab: {fileID: 241155928196107842, guid: fac750cfba784f64985f4bcae2f97f5f, type: 3}
+  references:
+    version: 2
+    RefIds:
+    - rid: 3936728203730616320
+      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
+      data:
+        amount: 5
+    - rid: 3936728239089123329
+      type: {class: AddTraitEffect, ns: , asm: Assembly-CSharp}
+      data:
+        trait: {fileID: 11400000, guid: b861afe08c95a284a8d10322aa75965c, type: 2}
+        amount: 1
+    - rid: 5019918716227026944
+      type: {class: ApplyStatusEffect, ns: , asm: Assembly-CSharp}
+      data:
+        statusData: {fileID: 11400000, guid: a7746f399a38a26429e981c23aa01ce2, type: 2}
+        stacks: 1
+        duration: 1

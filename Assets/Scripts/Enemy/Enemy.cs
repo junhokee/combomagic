@@ -5,6 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour, ICardTarget
 {
     [SerializeField] private Health health;
+    [SerializeField] private StatusEffectManager statusEffectManager;
+
+    public StatusEffectManager StatusEffectManager => statusEffectManager;
 
     public EnemyData Data { get; private set; }
     private EnemyMove currentMove;
@@ -33,6 +36,10 @@ public class Enemy : MonoBehaviour, ICardTarget
     
     public void ChooseNextMove()
     {
+        if(Data.possibleMoves.Count == 0)
+        {
+            return;
+        }
         EnemyMoveData chosen = Data.possibleMoves[Random.Range(0, Data.possibleMoves.Count)];
         currentMove = new EnemyMove(chosen, this);
     }
@@ -67,6 +74,10 @@ public class Enemy : MonoBehaviour, ICardTarget
     public void ReceiveDamage(int amount)
     {
         health.TakeDamage(amount);
+    }
+    public void ReceiveHeal(int amount)
+    {
+        health.Heal(amount);
     }
 
 

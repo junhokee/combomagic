@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d562a2edccd55b469b6c20542120724, type: 3}
+  m_Name: Short-Circuit
+  m_EditorClassIdentifier: 
+  title: Short-Circuit
+  description: Deal 3 damage per Electric Stack
+  image: {fileID: 0}
+  baseTraits:
+  - {fileID: 11400000, guid: b861afe08c95a284a8d10322aa75965c, type: 2}
+  isAttack: 1
+  cardtype: 0
+  effects:
+  - rid: 5019918716227026948
+  handAnimationTrigger: isPunching
+  animationTime: 0.9
+  handFab: {fileID: 241155928196107842, guid: fac750cfba784f64985f4bcae2f97f5f, type: 3}
+  references:
+    version: 2
+    RefIds:
+    - rid: 5019918716227026948
+      type: {class: DamagePerStackEffect, ns: , asm: Assembly-CSharp}
+      data:
+        amount: 2
+        traits: {fileID: 11400000, guid: b861afe08c95a284a8d10322aa75965c, type: 2}

@@ -15,7 +15,7 @@ public class CombatManager : MonoBehaviour
     public List<Enemy> enemies;
     [SerializeField] private Player player;
 
-    [SerializeField] private int cardsDrawnPerTurn = 5;
+     private int cardsDrawnPerTurn = 8;
     public GameObject defaultHand;
 
     public CombatState State { get; private set; }
@@ -34,15 +34,21 @@ public class CombatManager : MonoBehaviour
         StartCoroutine(RunCombat());
         
     }
-
-    IEnumerator RunCombat()
+    void beginCombatStuff()
     {
         Debug.Log(EnemySpawner.Instance);
 
         for(int i = 0; i < data.enemies.Count; i ++)
         {
             EnemySpawner.Instance.SpawnEnemy(data.enemies[i], data.positions[i]);
-        }   
+        }  
+        
+        deck.BuildDeck(RunManager.Instance.CurrentRun.deck);
+    }
+
+    IEnumerator RunCombat()
+    {
+        beginCombatStuff();
         SetState(CombatState.StartCombat);
         ActionQueue.Instance.Enqueue(new SwapGloveAction(defaultHand));
         yield return new WaitForSeconds(0.5f); // intro delay
@@ -50,6 +56,7 @@ public class CombatManager : MonoBehaviour
         while (true)
         {
             yield return StartCoroutine(PlayerTurnRoutine());
+
 
             if (CheckCombatEnd()) break;
 
@@ -75,12 +82,9 @@ public class CombatManager : MonoBehaviour
     IEnumerator PlayerTurnRoutine()
     {
         SetState(CombatState.PlayerTurnStart);
-        foreach(Card c in hand.cards)
-        {
-            
-        }
         
         DrawCards(cardsDrawnPerTurn);
+        ActionQueue.Instance.TransferQueue();
 
         yield return null;
 
@@ -123,12 +127,15 @@ public class CombatManager : MonoBehaviour
 
     void DrawCards(int amount)
     {
+        
         for (int i = 0; i < amount; i++)
         {
+            Debug.Log("a" + i + " " + amount);
             Card drawn = deck.DrawCard();
             if (drawn == null) break;
 
             hand.AddCard(drawn); 
+            
         }
     }
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Card: IActionSource
@@ -26,6 +27,7 @@ public class Card: IActionSource
     }
     public void Play(ICardTarget target)
     {
+        Deck.Instance.Discard(this);
         ActionQueue.Instance.Enqueue(new SwapGloveAction(data.handFab));
         if(data.cardtype == CardType.Monster)
         {
@@ -35,9 +37,19 @@ public class Card: IActionSource
         foreach (Effect effect in data.effects)
         {
 
-            GameAction action = effect.CreateAction(target, this);
+            GameAction action = effect.CreateAction(target, Player.Instance, this);
             
-            ActionQueue.Instance.Enqueue(action);
+            if (action == null)
+            continue;
+
+            if (effect.timing == EffectTiming.NextTurn)
+            {
+                ActionQueue.Instance.EnqueueNextTurn(action);
+            }
+            else
+            {
+                ActionQueue.Instance.Enqueue(action);
+            }
 
         }
 

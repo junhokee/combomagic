@@ -16,9 +16,9 @@ public class MainMenuScript : MonoBehaviour
         
     }
 
-    void OnStartButtonPressed()
+    public void OnStartButtonPressed()
     {
         RunManager.Instance.StartNewRun();
-        // GameSceneManager
+        GameSceneManager.LoadStarters();
     }
 }

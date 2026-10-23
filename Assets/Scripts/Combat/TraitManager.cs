@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -20,7 +21,7 @@ public class TraitManager : MonoBehaviour
         TraitInstance existing = activeTraits.Find(t => t.data == trait);
          if (existing != null)
         {
-            int newStack = existing.stacks + stacks;
+            int newStack = Math.Max(0, existing.stacks + stacks);
             activeTraits.Remove(existing);
             activeTraits.Insert(0,  new TraitInstance(trait, newStack));
         }
@@ -46,7 +47,15 @@ public class TraitManager : MonoBehaviour
 
         TraitsChangedEvent.Invoke(activeTraits);
     }
-
+    public int getStack(Traits traits)
+    {
+        TraitInstance existing = activeTraits.Find(t => t.data == traits);
+         if (existing != null)
+        {
+            return existing.stacks;
+        }
+        return 0;
+    }
     public int getTraitCount()
     {
         return activeTraits.Count;

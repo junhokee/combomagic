@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Deck : MonoBehaviour
 {
+    public static Deck Instance;
     private List<Card> drawPile = new List<Card>();
     private List<Card> discardPile = new List<Card>();
 
-    public void BuildDeck(List<CardData> startingCards)
+    public void Start()
     {
-        foreach (CardData data in startingCards)
-            drawPile.Add(new Card(data)); // Card instances created ONCE here, at deck-building time
+        Instance = this;
+    }
+    public void BuildDeck(List<Card> startingCards)
+    {
+        foreach (Card c in startingCards)
+            drawPile.Add(c); // Card instances created ONCE here, at deck-building time
 
         Shuffle();
     }

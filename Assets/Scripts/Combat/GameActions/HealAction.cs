@@ -15,8 +15,8 @@ public class HealAction : GameAction
 
     public override IEnumerator Execute()
     {
-        Debug.Log("Healing done");
-        //target.receiveDamage
+
+        target.ReceiveHeal(amount);
         yield return new WaitForSeconds(0.3f);
     }
 }

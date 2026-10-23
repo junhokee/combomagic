@@ -6,6 +6,9 @@ public class DropArea : MonoBehaviour, ICardTarget
 {
     public SpriteRenderer sr;
 
+    [SerializeField] private StatusEffectManager statusEffectManager;
+
+    public StatusEffectManager StatusEffectManager => statusEffectManager;
     public bool IsValidTarget(Card card){
         if(card.isAttack){
             return false;
@@ -24,6 +27,10 @@ public class DropArea : MonoBehaviour, ICardTarget
     }
 
     public void ReceiveDamage(int amount)
+    {
+
+    }
+    public void ReceiveHeal(int amount)
     {
 
     }

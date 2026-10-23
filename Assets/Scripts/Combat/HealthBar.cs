@@ -7,6 +7,7 @@ public class HealthBar : MonoBehaviour
 {
     public Slider slider;
     public Slider sliderEffect;
+    public Slider shieldSlider;
     [SerializeField] private float delay = 5.0f;
     [SerializeField] private float duration = 1.0f;
     private Coroutine healthEffectCoroutine;
@@ -14,6 +15,8 @@ public class HealthBar : MonoBehaviour
 
     public void SetMaxHealth(int maxHealth)
     {
+        shieldSlider.maxValue = maxHealth;
+        shieldSlider.value = 0;
         slider.maxValue = maxHealth;
         slider.value = maxHealth;
         sliderEffect.maxValue = maxHealth;
@@ -25,6 +28,10 @@ public class HealthBar : MonoBehaviour
         if (healthEffectCoroutine != null)
             StopCoroutine(healthEffectCoroutine);
         healthEffectCoroutine = StartCoroutine(AnimateHealthEffect());
+    }
+    public void SetShield(int shield)
+    {
+        shieldSlider.value = shield;
     }
      private IEnumerator AnimateHealthEffect()
     {

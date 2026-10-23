@@ -10,31 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4d562a2edccd55b469b6c20542120724, type: 3}
-  m_Name: ElectricPunch
+  m_Name: Capacitate
   m_EditorClassIdentifier: 
-  title: ElectricPunch
-  description: Deal 5 damage, Gain 1 Electric Trait
-  image: {fileID: 21300000, guid: 569ca92ad2fa8a74f8bd9f7e19812550, type: 3}
+  title: Capacitate
+  description: Gain 5 electric trait next turn
+  image: {fileID: 0}
   baseTraits:
   - {fileID: 11400000, guid: b861afe08c95a284a8d10322aa75965c, type: 2}
-  - {fileID: 11400000, guid: 955da6e49a9ae514c810d01de6dab895, type: 2}
-  isAttack: 1
+  - {fileID: 11400000, guid: b861afe08c95a284a8d10322aa75965c, type: 2}
+  isAttack: 0
   cardtype: 0
   effects:
-  - rid: 3936728203730616320
-  - rid: 3936728239089123329
-  handAnimationTrigger: isPunching
-  animationTime: 0.9
+  - rid: 5019918716227026945
+  handAnimationTrigger: 
+  animationTime: 0
   handFab: {fileID: 241155928196107842, guid: fac750cfba784f64985f4bcae2f97f5f, type: 3}
   references:
     version: 2
     RefIds:
-    - rid: 3936728203730616320
-      type: {class: DamageEffect, ns: , asm: Assembly-CSharp}
-      data:
-        amount: 5
-    - rid: 3936728239089123329
-      type: {class: AddTraitEffect, ns: , asm: Assembly-CSharp}
+    - rid: 5019918716227026945
+      type: {class: AddTraitLaterEffect, ns: , asm: Assembly-CSharp}
       data:
         trait: {fileID: 11400000, guid: b861afe08c95a284a8d10322aa75965c, type: 2}
-        amount: 1
+        amount: 5

@@ -34,7 +34,7 @@ public class EnemyMove: IActionSource
     {
         foreach (Effect effect in data.effects)
         {
-            GameAction action = effect.CreateAction(target, null);
+            GameAction action = effect.CreateAction(target, source, null);
             ActionQueue.Instance.Enqueue(action);
         }
     }

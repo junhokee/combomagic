@@ -549,7 +549,7 @@ MonoBehaviour:
   taskSheetDatas:
   - {fileID: 11400000, guid: 48616c262ab424d4c957996af09a97e1, type: 2}
   - {fileID: 11400000, guid: c550b1e744aa23942853073fe7c7e398, type: 2}
-  - {fileID: 11400000, guid: 48616c262ab424d4c957996af09a97e1, type: 2}
+  - {fileID: 11400000, guid: d2d31e526fdf65d45896cb79d5208aa9, type: 2}
 --- !u!1 &870120864
 GameObject:
   m_ObjectHideFlags: 0
